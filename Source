@@ -1,0 +1,272 @@
+
+if game.PlaceId == 6764302962 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Junk Simulator", "BloodTheme")
+ 
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+    local player = game.Players.LocalPlayer
+
+    MainSection:NewToggle("Auto Mine", "Mines Around You", function(v)
+        getgenv().autoswing = v
+        while true do
+            if not getgenv().autoswing then return end
+            wait(0.5)
+            local args = {
+                [1] = player.Character.HumanoidRootPart.CFrame * CFrame.Angles(-0.8143162727355957, 0.5097599029541016, 0.4771854281425476),
+                [2] = "Terrain"
+            }
+    
+            game:GetService("ReplicatedStorage").Knit.Services.TerrainService.RF.MineTerrain:InvokeServer(unpack(args))
+    
+        end
+    end)
+
+    MainSection:NewToggle("Auto Rebirth", "Automatically Rebirths", function(v)
+        getgenv().autotap = v
+        while true do
+            if not getgenv().autotap then return end
+            wait(0.5)
+
+    game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.Rebirth:InvokeServer()
+
+        end
+    end)
+
+    local Teleport = Window:NewTab("Teleport")
+    local TeleportSection = Teleport:NewSection("Shop Areas")
+
+    TeleportSection:NewButton("Shop Area", "Teleports to Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.527878, 2053.5, 230.568237, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Sell Pad", "Teleports to Sell Pad ", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(160.527878, 2053.5, 230.568237, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Junky Shop Area", "Teleports to Junky Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(194.634827, 2053.34937, 225.053604, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Rebirth Shop Area", "Teleports to Rebirth Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(218.534714, 2052.82544, 225.053604, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Junkyard Area", "Teleports to Rebirth Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(229.240051, 2056.96289, 188.371964, -0.189988166, -1.34640894e-08, -0.98178637, -1.93980054e-09, 1, -1.33384921e-08, 0.98178637, -6.2968597e-10, -0.189988166)        
+    end)
+
+    local Eggs = Window:NewTab("Eggs")
+    local EggsSection = Eggs:NewSection("Eggs")
+
+    EggsSection:NewToggle("Open Cracked Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+local args = {
+    [1] = "Cracked Egg",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+end
+    end)
+    EggsSection:NewToggle("Open Basic Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Basic Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+    EggsSection:NewToggle("Open Spotted Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Spotted Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+
+
+    local Misc = Window:NewTab("Misc")
+    local MiscSection = Misc:NewSection("Misc")
+    
+    MiscSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+    MiscSection:NewButton("Pet Combiner", "Teleports To Pet Combiner", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(227.688461, 2056.84619, 133.303055, -0.0515484661, 2.98415088e-08, -0.998670518, 9.55846176e-08, 1, 2.49474379e-08, 0.998670518, -9.41715399e-08, -0.0515484661)        
+    end)
+
+    local Credits = Window:NewTab("Credits")
+    local CreditsSection = Credits:NewSection("OverK2ll#3442")
+    
+
+
+elseif game.PlaceId == 6777363960 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Junk Simulator", "BloodTheme")
+
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+    local player = game.Players.LocalPlayer
+
+    MainSection:NewToggle("Auto Mine", "Mines Around You", function(v)
+        getgenv().autoswing = v
+        while true do
+            if not getgenv().autoswing then return end
+            wait(0.5)
+            local args = {
+                [1] = player.Character.HumanoidRootPart.CFrame * CFrame.Angles(-0.8143162727355957, 0.5097599029541016, 0.4771854281425476),
+                [2] = "Terrain"
+            }
+    
+            game:GetService("ReplicatedStorage").Knit.Services.TerrainService.RF.MineTerrain:InvokeServer(unpack(args))
+    
+        end
+    end)
+
+    MainSection:NewToggle("Auto Rebirth", "Automatically Rebirths", function(v)
+        getgenv().autotap = v
+        while true do
+            if not getgenv().autotap then return end
+            wait(0.5)
+
+    game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.Rebirth:InvokeServer()
+
+        end
+    end)
+
+    local Teleport = Window:NewTab("Teleport")
+    local TeleportSection = Teleport:NewSection("Shop Areas")
+
+    TeleportSection:NewButton("Shop Area", "Teleports to Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.527878, 2053.5, 230.568237, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Sell Pad", "Teleports to Sell Pad ", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(160.527878, 2053.5, 230.568237, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Junky Shop Area", "Teleports to Junky Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(194.634827, 2053.34937, 225.053604, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Rebirth Shop Area", "Teleports to Rebirth Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(218.534714, 2052.82544, 225.053604, 1, 0, 0, 0, 1, 0, 0, 0, 1)        
+    end)
+    TeleportSection:NewButton("Junkyard Area", "Teleports to Rebirth Shop", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(229.240051, 2056.96289, 188.371964, -0.189988166, -1.34640894e-08, -0.98178637, -1.93980054e-09, 1, -1.33384921e-08, 0.98178637, -6.2968597e-10, -0.189988166)        
+    end)
+
+
+
+    
+    local Eggs = Window:NewTab("Eggs")
+    local EggsSection = Eggs:NewSection("Eggs")
+    
+    EggsSection:NewToggle("Open Cracked Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+local args = {
+    [1] = "Cracked Egg",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+end
+    end)
+    EggsSection:NewToggle("Open Basic Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Basic Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+    EggsSection:NewToggle("Open Spotted Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Spotted Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+
+    local EggsSection = Eggs:NewSection("Ice World")
+
+
+    EggsSection:NewToggle("Open Icy Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Icy Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+    EggsSection:NewToggle("Open Frozen Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Frozen Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+    EggsSection:NewToggle("Open Snowy Egg", "Opens Egg", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+            wait(0.5)
+        local args = {
+            [1] = "Snowy Egg",
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Knit.Services.ShopService.RF.BuyEgg:InvokeServer(unpack(args))
+        end
+    end)
+
+    local Misc = Window:NewTab("Misc")
+    local MiscSection = Misc:NewSection("Misc")
+    
+    MiscSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+    
+    MiscSection:NewButton("Pet Combiner", "Teleports To Pet Combiner", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(227.688461, 2056.84619, 133.303055, -0.0515484661, 2.98415088e-08, -0.998670518, 9.55846176e-08, 1, 2.49474379e-08, 0.998670518, -9.41715399e-08, -0.0515484661)        
+    end)
+
+    local Credits = Window:NewTab("Credits")
+    local CreditsSection = Credits:NewSection("OverK2ll#3442")
+end
